@@ -8,9 +8,7 @@
 #define L1_NUM_WAYS 4
 #define L1_LINE_SIZE 16
 
-//--------------------------------------------------------------------------------------------------------------------------------
-
-/* Bit manipulation macros for breaking up address */
+//--- Bit manipulation macros for breaking up address ---------------------------------------------------------------------------------
 
 // Offset is the same for virtual addr and physical addr (bits 0-3)
 #define L1_OFFSET_MASK 0x0000000F 
@@ -24,9 +22,7 @@
 #define L1_TAG_MASK    0xFFFFFC00 
 #define GET_L1_VIRT_TAG(va)    (((va) & L1_TAG_MASK) >> 10)
 
-//--------------------------------------------------------------------------------------------------------------------------------
-
-// Structures that make up the cache
+//--- Structures that make up the cache -----------------------------------------------------------------------------------------------
 
 // Structure for an L1 cache line
 typedef struct {
@@ -53,9 +49,7 @@ typedef struct {
     unsigned int way_prediction_failure;
 } L1_Cache;
 
-//--------------------------------------------------------------------------------------------------------------------------------
-
-// Public functions
+//--- Public functions ----------------------------------------------------------------------------------------------------------------
 
 // Initialize a new L1 cache
 L1_Cache* l1_cache_create(void);
